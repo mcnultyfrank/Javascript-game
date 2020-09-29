@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    width: auto;
+    height: auto;
+    width: 80vw;
+    height: 60vh;
+}
+.game-container{
+    position: relative;
+    margin: 2vh;
+    margin: 2vw;
+    border: 2px solid black;
+    width: 80vw;
+    height: 60vh;
+    max-width: 80vw;
+    max-height: 60vh;
+    .furthestbackground{
+        width: 79.7vw;
+        height: 25vh;
+        top: 0;
+        background-color: #253659;
+    }
+    .middlebackground{
+        position: absolute;
+        width: 79.7vw;
+        height: 25vh;
+        bottom: 10vh;
+        left: 0;
+        background-color: #8C625E;
+    }
+    .upperfloorbackground{
+        position: absolute;
+        width: 79.7vw;
+        height: 10vh;
+        bottom: 5vh;
+        left: 0;
+        background-color: #D9C6BF;
+    }
+    .floorbackground{
+        position: absolute;
+        width: 79.7vw;
+        height: 5vh;
+        bottom: 0;
+        left: 0;
+        background-color: #F2E0D5;
+    }
+    .player{
+        position: absolute ;
+        height: 15vh;
+        width: 5vw;
+        bottom: 0; 
+        left: 1vw;
+        background-color: red;
+    }
+    .player-jump{
+        animation: bounce 2s ease ;
+        position: absolute ;
+        height: 15vh;
+        width: 5vw;
+        bottom: 0;
+        left: 1vw;
+        background-color: red;
+    }
+}
+@keyframes bounce {
+    0%   { transform: scale(1,1)      translateY(0); }
+    10%  { transform: scale(1.1,.9)   translateY(0); }
+    30%  { transform: scale(.9,1.1)   translateY(-100px); }
+    50%  { transform: scale(1.05,.95) translateY(0); }
+    57%  { transform: scale(1,1)      translateY(-7px); }
+    64%  { transform: scale(1,1)      translateY(0); }
+    100% { transform: scale(1,1)      translateY(0); }
+}
