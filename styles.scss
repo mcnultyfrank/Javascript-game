@@ -1,15 +1,23 @@
+@import "/SCSS/Background/background.css";
+@import "/SCSS/Enemy/enemy.css";
+@import "/SCSS/Player/player.css";
+ 
+  
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
+    font-weight: 200;
 }
 img{
-    width: auto;
+    width: auto; 
     height: auto;
-    width: 80vw;
-    height: 60vh;
+    width: 80vw; 
+    height: 60vh; 
 }
 .game-container{
+    z-index: 0;
     position: relative;
     margin: 2vh;
     margin: 2vw;
@@ -18,60 +26,94 @@ img{
     height: 60vh;
     max-width: 80vw;
     max-height: 60vh;
-    .furthestbackground{
-        width: 79.7vw;
-        height: 25vh;
-        top: 0;
-        background-color: #253659;
+    .start__menu__no__display{
+    display: none;
     }
-    .middlebackground{
+    .start-menu{
+        z-index: 1;
         position: absolute;
-        width: 79.7vw;
-        height: 25vh;
-        bottom: 10vh;
-        left: 0;
-        background-color: #8C625E;
+        width: 40vw;
+        height: 40vh;   
+        background-color: #023859;
+        border: 2px solid black;
+        border-radius: 5px;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%); 
+       
+        h3{
+            position: absolute;
+            color: white;
+            font-size: 1.5vw;
+            top: 20px;
+            margin-left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+        }  
+        
+        button{
+            font-size: 2vw;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: #011526;
+            color: white;
+            font-weight: 100;
+            transition: 0.1s;
+             
+        }
     }
-    .upperfloorbackground{
+    .difficulty{
         position: absolute;
-        width: 79.7vw;
-        height: 10vh;
-        bottom: 5vh;
-        left: 0;
-        background-color: #D9C6BF;
+        top: 10vh;
+        margin-left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        .selected__difficulty{
+            background-color: white;
+            color: #011526;
+        }
+    button{
+        width: calc(30vw / 3);
+        height: 8vh;
+        &:hover{
+            background-color: white;
+            color: #011526;
+            cursor: pointer;
+        }     
+    } 
     }
-    .floorbackground{
+    .start{
         position: absolute;
-        width: 79.7vw;
-        height: 5vh;
-        bottom: 0;
-        left: 0;
-        background-color: #F2E0D5;
+        top: 22vh;
+        margin-left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%); 
+    button{
+        width: 30vw;
+        height: 12vh;
     }
-    .player{
-        position: absolute ;
-        height: 15vh;
-        width: 5vw;
-        bottom: 0; 
-        left: 1vw;
-        background-color: red;
+    .start__button_blur{
+        opacity: 0.2;
     }
-    .player-jump{
-        animation: bounce 2s ease ;
-        position: absolute ;
-        height: 15vh;
-        width: 5vw;
-        bottom: 0;
-        left: 1vw;
-        background-color: red;
+    .start__button__hover:hover{
+        background-color: white;
+        color: #011526;
+        cursor: pointer;
     }
+    }    
 }
+    
+
+
 @keyframes bounce {
     0%   { transform: scale(1,1)      translateY(0); }
     10%  { transform: scale(1.1,.9)   translateY(0); }
-    30%  { transform: scale(.9,1.1)   translateY(-100px); }
-    50%  { transform: scale(1.05,.95) translateY(0); }
-    57%  { transform: scale(1,1)      translateY(-7px); }
-    64%  { transform: scale(1,1)      translateY(0); }
+    30%  { transform: scale(.9,1.1)   translateY(-200px); }
+    50%  { transform: scale(1.1,.9)     translateY(0); }
     100% { transform: scale(1,1)      translateY(0); }
+}
+@keyframes left-to-right{
+    0% { transform: scale(1)   translateX(0);}
+    100% { transform: scale(1.1)   translateX(-79vw);}
 }

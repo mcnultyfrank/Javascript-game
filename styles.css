@@ -1,7 +1,12 @@
+@import "/SCSS/Background/background.css";
+@import "/SCSS/Enemy/enemy.css";
+@import "/SCSS/Player/player.css";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
+  font-weight: 200;
 }
 
 img {
@@ -12,6 +17,7 @@ img {
 }
 
 .game-container {
+  z-index: 0;
   position: relative;
   margin: 2vh;
   margin: 2vw;
@@ -21,52 +27,78 @@ img {
   max-width: 80vw;
   max-height: 60vh;
 }
-.game-container .furthestbackground {
-  width: 79.7vw;
-  height: 25vh;
-  top: 0;
-  background-color: #253659;
+.game-container .start__menu__no__display {
+  display: none;
 }
-.game-container .middlebackground {
+.game-container .start-menu {
+  z-index: 1;
   position: absolute;
-  width: 79.7vw;
-  height: 25vh;
-  bottom: 10vh;
-  left: 0;
-  background-color: #8C625E;
+  width: 40vw;
+  height: 40vh;
+  background-color: #023859;
+  border: 2px solid black;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
-.game-container .upperfloorbackground {
+.game-container .start-menu h3 {
   position: absolute;
-  width: 79.7vw;
-  height: 10vh;
-  bottom: 5vh;
-  left: 0;
-  background-color: #D9C6BF;
+  color: white;
+  font-size: 1.5vw;
+  top: 20px;
+  margin-left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
-.game-container .floorbackground {
-  position: absolute;
-  width: 79.7vw;
-  height: 5vh;
-  bottom: 0;
-  left: 0;
-  background-color: #F2E0D5;
+.game-container .start-menu button {
+  font-size: 2vw;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #011526;
+  color: white;
+  font-weight: 100;
+  transition: 0.1s;
 }
-.game-container .player {
+.game-container .difficulty {
   position: absolute;
-  height: 15vh;
-  width: 5vw;
-  bottom: 0;
-  left: 1vw;
-  background-color: red;
+  top: 10vh;
+  margin-left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
-.game-container .player-jump {
-  animation: bounce 2s ease;
+.game-container .difficulty .selected__difficulty {
+  background-color: white;
+  color: #011526;
+}
+.game-container .difficulty button {
+  width: calc(30vw / 3);
+  height: 8vh;
+}
+.game-container .difficulty button:hover {
+  background-color: white;
+  color: #011526;
+  cursor: pointer;
+}
+.game-container .start {
   position: absolute;
-  height: 15vh;
-  width: 5vw;
-  bottom: 0;
-  left: 1vw;
-  background-color: red;
+  top: 22vh;
+  margin-left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+.game-container .start button {
+  width: 30vw;
+  height: 12vh;
+}
+.game-container .start .start__button_blur {
+  opacity: 0.2;
+}
+.game-container .start .start__button__hover:hover {
+  background-color: white;
+  color: #011526;
+  cursor: pointer;
 }
 
 @keyframes bounce {
@@ -77,18 +109,20 @@ img {
     transform: scale(1.1, 0.9) translateY(0);
   }
   30% {
-    transform: scale(0.9, 1.1) translateY(-100px);
+    transform: scale(0.9, 1.1) translateY(-200px);
   }
   50% {
-    transform: scale(1.05, 0.95) translateY(0);
-  }
-  57% {
-    transform: scale(1, 1) translateY(-7px);
-  }
-  64% {
-    transform: scale(1, 1) translateY(0);
+    transform: scale(1.1, 0.9) translateY(0);
   }
   100% {
     transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes left-to-right {
+  0% {
+    transform: scale(1) translateX(0);
+  }
+  100% {
+    transform: scale(1.1) translateX(-79vw);
   }
 }

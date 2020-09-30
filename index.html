@@ -4,17 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <title>Javascript-game</title>
 </head>
-<body>
+<body> 
     <div class="game-container">
+        <div class = "moon"></div>
+        <div class="stars"></div>
+        <div class="stars1"></div>
+        <div class="stars2"></div>
+        <div class="stars3"></div>
+        <div class="stars4"></div>
+        <div class="stars5"></div>
         <div class="furthestbackground"></div>
-        <div class="middlebackground"></div>
-        <div class ="upperfloorbackground"></div>
         <div class ="floorbackground"></div>
         <div class="player"></div>
         <div class="enemy"></div>
+        <div class="menu-container">
+        <section class="start-menu">
+            <button><i class="fas fa-volume-up"></i></button>
+            <h3>Difficulty</h3>
+            <div class="difficulty">
+                <button class = "easy">Easy</button>
+                <button class = "medium">Medium</button>
+                <button class = "hard">Hard</button>
+            </div>
+            <div class = "start">
+            <button class = "start__button start__button_blur">Start</button>
+            </div>
+
+        </section>
     </div>
+    </div>
+
+
+
+
+    <script src="https://kit.fontawesome.com/d08936fb1e.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>
