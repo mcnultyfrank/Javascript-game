@@ -19,8 +19,6 @@ img {
 .game-container {
   z-index: 0;
   position: relative;
-  margin: 2vh;
-  margin: 2vw;
   border: 2px solid black;
   width: 80vw;
   height: 60vh;
@@ -116,13 +114,5 @@ img {
   }
   100% {
     transform: scale(1, 1) translateY(0);
-  }
-}
-@keyframes left-to-right {
-  0% {
-    transform: scale(1) translateX(0);
-  }
-  100% {
-    transform: scale(1.1) translateX(-79vw);
   }
 }

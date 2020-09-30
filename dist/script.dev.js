@@ -34,6 +34,7 @@ startButton.addEventListener("click", function (e) {
   // if(easyButton.classList == "selected__difficulty")
   Menu.classList.add("start__menu__no__display");
   console.log('hi');
+  playerJump.classList.add("player-roll");
   screenClick.addEventListener("click", function (e) {
     if (playerJump.classList == "player-jump") {
       return;
