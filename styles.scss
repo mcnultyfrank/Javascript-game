@@ -16,6 +16,9 @@ img{
     width: 80vw; 
     height: 60vh; 
 }
+.outsidebody{
+    z-index: 999;
+}
 .game-container{
     z-index: 0;
     position: relative;
@@ -41,7 +44,13 @@ img{
         left: 50%;
         margin-right: -50%;
         transform: translate(-50%, -50%); 
-       
+        .fa-question {
+            cursor: pointer;
+            position: absolute;
+            top: 0.2vh;
+            left: 0.2vw;
+            font-size: 2vw;
+        }
         h3{
             position: absolute;
             color: white;
@@ -62,6 +71,34 @@ img{
             transition: 0.1s;
              
         }
+    }
+    .info__modal__show{
+        z-index: 1;
+        position: absolute;
+        width: 35vw;
+        height: 40vh;   
+        background-color: #055766;
+        border: 2px solid black;
+        border-radius: 5px;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        i {
+            cursor: pointer;
+            position: absolute;
+            top: 0.2vh;
+            right: 0.2vw;
+            font-size: 2vw;
+        }
+        p{
+            color: white;
+            padding-top: 1vh;
+            font-size: 2vw;
+        }
+    }
+    .info__modal__hide{
+        display: none;
     }
     .difficulty{
         position: absolute;
@@ -101,23 +138,16 @@ img{
         color: #011526;
         cursor: pointer;
     }
-    }    
+    }  
+    
 }
     
 
 
-@keyframes bounce {
-    0%   { transform: scale(1,1)      translateY(0); }
-    10%  { transform: scale(1.1,.9)   translateY(0); }
-    30%  { transform: scale(.9,1.1)   translateY(-200px); }
-    50%  { transform: scale(1.1,.9)     translateY(0); }
-    100% { transform: scale(1,1)      translateY(0); }
+
+@keyframes left-to-right{
+    0% { transform: scale(1)   translateX(0);}
+    100% { transform: scale(1)   translateX(-79vw);}
 }
-// @keyframes left-to-right{
-//     0% { transform: scale(1)   translateX(0);}
-//     100% { transform: scale(1.1)   translateX(-79vw);}
-// }
-// @keyframes moon-down{
-//     0% { transform: scale(1)   translateX(0);}
-//     100% { transform: scale(1.1)   translateY(60vh) translateX(-50vw);}
-// }
+
+@media screen and (min-width: 320) and (max-width: 767px) {}

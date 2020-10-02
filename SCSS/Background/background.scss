@@ -1,13 +1,44 @@
 .moon{
-    animation: moon-down 10s;
     z-index: 1;
     position:absolute;
-    top:10px;
-    right: 10px;
+    top:50px;
+    right: 100px;
     width:60px; height:60px;
     border-radius:50%;
     background: #262626;
     box-shadow: inset 15px 0px 10px #A6A6A6, 1px 1px 1px 1px #D9D9D9 ; 
+} 
+.moon__remove{
+   display:none;
+} 
+.moon-animation{
+    animation: moon-down 40s, moon-change 50s;
+    z-index: 1;
+    position:absolute;
+    top:50px;
+    right: 100px;
+    width:60px; height:60px;
+    border-radius:50%;
+    background: #726d6d;
+    box-shadow: inset 15px 0px 10px #A6A6A6, 1px 1px 1px 1px #D9D9D9 ; 
+} 
+.sun{
+    z-index: 1;
+    position:absolute;
+    bottom: -50px;
+    right: 600px;
+    width:60px; height:60px;
+    border-radius:50%;
+} 
+.sun-animation{
+    animation: sun-up 140s, sun-change 30s;
+    z-index: 1;
+    position:absolute;
+    bottom: -50px;
+    right: 600px;
+    width:60px; height:60px;
+    border-radius:50%;
+    background: yellow;
 } 
 .fa-cloud{
     z-index: 1;
@@ -17,7 +48,17 @@
     top: 100px;
     right: 80px;
 }
+.fa-cloud-animation{
+    animation: left-to-right 200s infinite;
+    z-index: 1;
+    position: absolute;
+    font-size: 45px;
+    color: #9FB0BF;
+    top: 100px;
+    right: 80px;
+}
 .fa-cloud:nth-child(2){
+    // animation: left-to-right 200s infinite;
     z-index: 1;
     position: absolute;
     font-size: 48px;
@@ -26,6 +67,7 @@
     left: 100px;
 }
 .fa-cloud:nth-child(3){
+    // animation: left-to-right 200s infinite;
     z-index: 1;
     position: absolute;
     font-size: 66px;
@@ -34,6 +76,8 @@
     left: 400px;
 }
 .fa-cloud:nth-child(4){
+    // animation: left-to-right 180s infinite;
+
     z-index: 1;
     position: absolute;
     font-size: 56px;
@@ -42,6 +86,8 @@
     right: 100px;
 }
 .fa-cloud:nth-child(5){
+    // animation: left-to-right 210s infinite;
+
     z-index: 1;
     position: absolute;
     font-size: 40px;
@@ -50,6 +96,8 @@
     right: 400px;
 }
 .fa-cloud:nth-child(6){
+    // animation: left-to-right 200s infinite;
+
     z-index: 1;
     position: absolute;
     font-size: 36px;
@@ -59,7 +107,7 @@
 }
 
 .stars {
-    // animation: left-to-right 650s infinite;
+    animation: left-to-right 650s infinite;
     z-index: 1;
     position:absolute;
     top:15px;
@@ -69,7 +117,7 @@
     background: #F2F2F2;
 }
 .stars1 {
-    // animation: left-to-right 700s infinite;
+    animation: left-to-right 700s infinite;
     z-index: 1;
     position:absolute;
     top:22px;
@@ -79,7 +127,7 @@
     background: #F2F2F2;
 }
 .stars2 {
-    // animation: left-to-right 700s infinite;
+    animation: left-to-right 700s infinite;
     z-index: 1;
     position:absolute;
     top:25px;
@@ -89,7 +137,7 @@
     background: #F2F2F2;
 }
 .stars3 {
-    // animation: left-to-right 700s infinite;
+    animation: left-to-right 700s infinite;
     z-index: 1;
     position:absolute;
     top:45px;
@@ -126,6 +174,14 @@
     top: 0;
     background-color: #011526;
 }
+.furthestbackground-animation{
+    position: absolute;
+    width: 79.8vw;
+    height: 58vh;
+    left: 0;
+    top: 0;
+    animation: background-change 140s  ease;
+}
 
 .floorbackground{
     position: absolute;
@@ -133,5 +189,29 @@
     height:2vh;
     bottom: 0;
     left: 0;
-    background-color: #F2E0D5;
+    background-color: #260605;
 }  
+
+@keyframes background-change {
+    0% {background-color: #011526;}
+    100% {background-color: #F2D6B3;}
+}
+@keyframes sun-change {
+    0% {background-color: transparent;}
+    50% {background-color: transparent;}
+    100% {background-color: #F5FF08;}
+}
+@keyframes moon-change {
+    0% {background-color:#726d6d;box-shadow: inset 15px 0px 10px #A6A6A6, 1px 1px 1px 1px #D9D9D9 ; }
+    50% {background-color: transparent;box-shadow: inset 15px 0px 10px transparent, 1px 1px 1px 1px transparent ;}
+    100% {background-color: transparent;box-shadow: inset 15px 0px 10px transparent, 1px 1px 1px 1px transparent ;}
+}
+
+@keyframes moon-down{
+    0% { transform: scale(1)   translateX(0);}
+    100% { transform: scale(1.1)   translateY(12vh) translateX(10vw);}
+}
+@keyframes sun-up{
+    0% { transform: scale(1)   translateX(0);}
+    100% { transform: scale(1.1)   translateY(-47vh) translateX(24vw);}
+}

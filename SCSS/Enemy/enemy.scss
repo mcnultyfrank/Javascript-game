@@ -1,5 +1,13 @@
 .enemy{
-    animation: left-to-right linear 1.5s infinite;
+    position: absolute;
+    height: 30px;
+    width: 20px;
+    bottom: 2vh;
+    right: 0;
+    background: white;
+}  
+.enemy-animation{
+    animation: left-to-right linear 1.2s infinite;
     position: absolute;
     height: 30px;
     width: 20px;

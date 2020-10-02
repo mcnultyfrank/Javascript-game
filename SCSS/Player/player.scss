@@ -7,10 +7,10 @@
       height: 80px;
       width: 80px;
       margin: 0;
-      background: radial-gradient(circle at 100px 100px, green, #000);
+      background: radial-gradient(circle at 100px 10px, white, #000);
     }
   .player-roll{
-    animation: spin 1s linear infinite;
+    animation: spin 0.5s linear infinite;
     position: absolute;
       display: block;
       border-radius: 100%;
@@ -19,12 +19,12 @@
       height: 80px;
       width: 80px;
       margin: 0;
-      background: radial-gradient(circle at 100px 100px, green, #000);
+      background: radial-gradient(circle at 100px 10px, white, #000);
   }
   
   .player-jump {
 
-    animation: bounce 2s;
+    animation: bounce 1.6s;
     position: absolute;
     display: block;
     background: black;
@@ -34,10 +34,17 @@
     height: 80px;
     width: 80px;
     margin: 0;
-    background: radial-gradient(circle at 100px 100px, green, #000);
+    background: radial-gradient(circle at 100px 100px, white, #000);
   }
 
   @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
   }
+  @keyframes bounce {
+    0%   { transform: scale(1,1)      translateY(0); }
+    10%  { transform: scale(.9,1.1)   translateY(-200px); }
+    30%  { transform: scale(1)   translateY(0); }
+    50%  { transform: scale(1)     translateY(0); }
+    100% { transform: scale(1)      translateY(0); }
+}

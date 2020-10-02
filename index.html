@@ -8,8 +8,12 @@
     <title>Javascript-game</title>
 </head>
 <body> 
+    <div class="outsidebody"></div>
+
     <div class="game-container">
+
         <div class = "moon"></div>
+        <div class = "sun"></div>
         <i class="fas fa-cloud"></i>
         <i class="fas fa-cloud"></i>
         <i class="fas fa-cloud"></i>
@@ -34,7 +38,7 @@
         <div class="enemy"></div>
         <div class="menu-container">
         <section class="start-menu">
-            <button><i class="fas fa-volume-up"></i></button>
+            <button><i class="fas fa-question"></i></button>
             <h3>Difficulty</h3>
             <div class="difficulty">
                 <button class = "easy">Easy</button>
@@ -44,11 +48,15 @@
             <div class = "start">
             <button class = "start__button start__button_blur">Start</button>
             </div>
-
+            <div class="info__modal__show info__modal__hide">
+                <i class="fas fa-times"></i>
+                <p>You are on the run from the local werewolf!<br> Click on the screen to bounce to ball, avoiding the obstacles in your path</p>
+                <br>
+                <p>Stay alive until sunrise to win the game</p>
+            </div>
         </section>
     </div>
     </div>
-
 
 
 
