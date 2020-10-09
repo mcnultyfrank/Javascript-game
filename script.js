@@ -17,12 +17,17 @@ const info = document.querySelector(".fa-question");
 const openInfo = document.querySelector(".info__modal__show");
 const closeInfo = document.querySelector(".info__modal__hide");
 
+// collision
 const enemyRect = enemyAnimation.getBoundingClientRect();
 const playerRect = player.getBoundingClientRect();
-const sunRect = sunAnimation.getBoundingClientRect()
-console.log(playerRect, enemyRect);
+console.log(enemyRect, "player", playerRect, "enemy");
 
 
+if (playerRect.bottom < enemyRect.top){
+        alert('you lose');
+}
+
+// when difficulty selected, 
 
 // Pre game Menu Javascript
         info.addEventListener("click", e => {
@@ -37,6 +42,14 @@ console.log(playerRect, enemyRect);
                 mediumButton.classList.remove("selected__difficulty");
                 hardButton.classList.remove("selected__difficulty");
                 startButtonHover.classList.add("start__button__hover");
+                enemyAnimation.classList.remove("enemy-animation-medium");
+                enemyAnimation.classList.remove("enemy-animation-hard");
+
+                        setTimeout(function(){
+                        {enemyAnimation.classList.add("enemy-animation-easy")}
+                        },3000);
+                
+        
         })
         mediumButton.addEventListener("click", e => {
                 mediumButton.classList.add("selected__difficulty");
@@ -44,6 +57,12 @@ console.log(playerRect, enemyRect);
                 easyButton.classList.remove("selected__difficulty");
                 hardButton.classList.remove("selected__difficulty");
                 startButtonHover.classList.add("start__button__hover");
+                enemyAnimation.classList.remove("enemy-animation-easy");
+                enemyAnimation.classList.remove("enemy-animation-hard");
+
+                        setTimeout(function(){
+                        {enemyAnimation.classList.add("enemy-animation-medium")}
+                        },3000);
         })
         hardButton.addEventListener("click", e => {
                 hardButton.classList.add("selected__difficulty");
@@ -51,11 +70,19 @@ console.log(playerRect, enemyRect);
                 easyButton.classList.remove("selected__difficulty");
                 mediumButton.classList.remove("selected__difficulty");
                 startButtonHover.classList.add("start__button__hover");
+                enemyAnimation.classList.remove("enemy-animation-medium");
+                enemyAnimation.classList.remove("enemy-animation-easy");
+
+                        setTimeout(function(){
+                        {enemyAnimation.classList.add("enemy-animation-hard")}
+                        },3000);
         })
 
+  
 // Beginning of game javascript       
         startButton.addEventListener("click", e => {
                 // if(easyButton.classList == "selected__difficulty")
+                
                 Menu.classList.add("start__menu__no__display");
                 player.classList.add("player-roll");
                 moonAnimation.classList.add("moon-animation");
@@ -66,9 +93,8 @@ console.log(playerRect, enemyRect);
                         {moonAnimation.classList.add("moon__remove");}
                                 },20000);
                 cloudsAnimation.classList.add("fa-cloud-animation");
-                setTimeout(function(){
-                        {enemyAnimation.classList.add("enemy-animation")}
-                        },3000);
+               
+                
                 backgroundAnimation.classList.add("furthestbackground-animation");
                 screenClick.addEventListener("click", e => {
                         if(player.classList == "player-jump"){return}
@@ -76,8 +102,9 @@ console.log(playerRect, enemyRect);
                         setTimeout(function(){
                         player.classList.remove("player-jump");
                         },400);})
-
         })
+
+        
         // endGame.adEventLister('animationend', () => {
         //         console.log('end');
         // })

@@ -1,18 +1,38 @@
-.enemy {
+.enemy img {
   position: absolute;
-  height: 30px;
-  width: 20px;
+  z-index: 1;
+  height: 10vh;
+  width: 7vw;
   bottom: 2vh;
   right: 0;
-  background: white;
 }
 
-.enemy-animation {
-  animation: left-to-right linear 1.2s infinite;
+.enemy-animation-easy img {
+  animation: left-to-right linear 1.8s infinite;
   position: absolute;
-  height: 30px;
-  width: 20px;
+  height: 10vh;
+  width: 7vw;
+  bottom: 2vh;
   bottom: 2vh;
   right: 0;
-  background: white;
+}
+
+.enemy-animation-medium img {
+  animation: left-to-right linear 1.4s infinite;
+  position: absolute;
+  height: 10vh;
+  width: 7vw;
+  bottom: 2vh;
+  bottom: 2vh;
+  right: 0;
+}
+
+.enemy-animation-hard img {
+  animation: left-to-right linear 0.7s infinite;
+  position: absolute;
+  height: 10vh;
+  width: 7vw;
+  bottom: 2vh;
+  bottom: 2vh;
+  right: 0;
 }

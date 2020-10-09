@@ -17,11 +17,17 @@ var cloudsAnimation = document.querySelector(".fa-cloud");
 var endGame = document.querySelector(".sun-animation");
 var info = document.querySelector(".fa-question");
 var openInfo = document.querySelector(".info__modal__show");
-var closeInfo = document.querySelector(".info__modal__hide");
+var closeInfo = document.querySelector(".info__modal__hide"); // collision
+
 var enemyRect = enemyAnimation.getBoundingClientRect();
 var playerRect = player.getBoundingClientRect();
-var sunRect = sunAnimation.getBoundingClientRect();
-console.log(playerRect, enemyRect); // Pre game Menu Javascript
+console.log(enemyRect, "player", playerRect, "enemy");
+
+if (playerRect.bottom < enemyRect.top) {
+  alert('you lose');
+} // when difficulty selected, 
+// Pre game Menu Javascript
+
 
 info.addEventListener("click", function (e) {
   openInfo.classList.remove("info__modal__hide");
@@ -35,6 +41,13 @@ easyButton.addEventListener("click", function (e) {
   mediumButton.classList.remove("selected__difficulty");
   hardButton.classList.remove("selected__difficulty");
   startButtonHover.classList.add("start__button__hover");
+  enemyAnimation.classList.remove("enemy-animation-medium");
+  enemyAnimation.classList.remove("enemy-animation-hard");
+  setTimeout(function () {
+    {
+      enemyAnimation.classList.add("enemy-animation-easy");
+    }
+  }, 3000);
 });
 mediumButton.addEventListener("click", function (e) {
   mediumButton.classList.add("selected__difficulty");
@@ -42,6 +55,13 @@ mediumButton.addEventListener("click", function (e) {
   easyButton.classList.remove("selected__difficulty");
   hardButton.classList.remove("selected__difficulty");
   startButtonHover.classList.add("start__button__hover");
+  enemyAnimation.classList.remove("enemy-animation-easy");
+  enemyAnimation.classList.remove("enemy-animation-hard");
+  setTimeout(function () {
+    {
+      enemyAnimation.classList.add("enemy-animation-medium");
+    }
+  }, 3000);
 });
 hardButton.addEventListener("click", function (e) {
   hardButton.classList.add("selected__difficulty");
@@ -49,6 +69,13 @@ hardButton.addEventListener("click", function (e) {
   easyButton.classList.remove("selected__difficulty");
   mediumButton.classList.remove("selected__difficulty");
   startButtonHover.classList.add("start__button__hover");
+  enemyAnimation.classList.remove("enemy-animation-medium");
+  enemyAnimation.classList.remove("enemy-animation-easy");
+  setTimeout(function () {
+    {
+      enemyAnimation.classList.add("enemy-animation-hard");
+    }
+  }, 3000);
 }); // Beginning of game javascript       
 
 startButton.addEventListener("click", function (e) {
@@ -67,11 +94,6 @@ startButton.addEventListener("click", function (e) {
     }
   }, 20000);
   cloudsAnimation.classList.add("fa-cloud-animation");
-  setTimeout(function () {
-    {
-      enemyAnimation.classList.add("enemy-animation");
-    }
-  }, 3000);
   backgroundAnimation.classList.add("furthestbackground-animation");
   screenClick.addEventListener("click", function (e) {
     if (player.classList == "player-jump") {
